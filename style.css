@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #001F3F, #003366, #004080, #00509E, #0066CC);
+}
+
+
+.select-btn{
+    width: 250px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}
+.select-menu .select-btn{
+    font-family: 'popins';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: -140px;
+    left: 5px;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+
+}
+.select-btn .icon-arrow
+{
+    font-size: 20px;
+    transition: 1s;
+}
+
+.select-btn.active .icon-arrow {
+    transform: rotate(180deg);
+}
+.select-menu .list{
+    position: absolute;
+    width: 200px;
+    transform: translateY(-140px);
+    margin-top: 10px;
+}
+.list .option{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 55px;
+    background: #fff;
+    padding: 0 16px;
+    cursor: pointer;
+    transform-origin: top;
+    opacity: 0;
+    transform: scale(0) translateY(-65px);
+    margin-bottom: -55px;
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+    transition-delay: calc(.1s * var(--i));
+}
+.select-btn.active~.list .option  {
+    transition: opacity 1s ease-in-out, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+    transition-delay: calc(.1s * var(--i));
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    margin-bottom: 0;
+}
+
+.list .option:hover {
+    background: #56c5f4;
+}
+
+.list .option:nth-child(1) {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 5px;
+}
+
+.list .option:nth-child(5) {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 50px;
+}
+
+.option .icon {
+    filter: invert(100%);
+    margin-right: 20px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+}
+.list .option{
+    
+    background: linear-gradient(to right, #025bae, #0385d0, #00a0ff, #00a8ff, #00b4ff);
+}
+@font-face {
+    font-family: 'popins';
+    src: url(/Poppins-Medium.ttf);
+}
+.option-text{
+    font-size:  15px ;
+    font-family: 'popins';
+    color: #fff;
+    text-shadow:1px 1px 0 #000, 2px 2px 0 #000; /* Create a shadow to give the appearance of depth */
+ /* Apply a 3D transformation */ /* Background color */
+}
+.fa-solid{
+    position: relative;
+    top: 10px;
+    left: 5px;
+    filter: invert(100%);
+    width: 30px;
+    margin-right: 20px;
+    height: 30px;
+}
